@@ -39,6 +39,57 @@ three instances of a `Human`, then create an array called people of type [`Human
 Create a new array called sortedPeople of type [`Human`] that is the people array sorted by age.
 
 </br> </br>
+Answer:
+```
+class Human: CustomStringConvertible, Equatable, Comparable{
+    static func > (lhs: Human, rhs: Human) -> Bool{
+        return lhs.age > rhs.age
+    }
+    static func < (lhs: Human, rhs: Human) -> Bool{
+        return lhs.age < rhs.age
+    }
+    static func == (lhs: Human, rhs: Human) -> Bool {
+        print("Both people are equal")
+        return lhs.name == rhs.name && lhs.age == rhs.age
+}
+    static func != (lhs: Human, rhs: Human) -> Bool {
+        print("They are not equal")
+        return lhs.name != rhs.name && lhs.age != rhs.age
+}
+    
+    var name: String
+    var age: Int
+    init(name: String, age: Int){
+        self.name = name
+        self.age = age
+    }
+    var description: String {
+          return "\(name) is \(age) years old."
+      }
+}
+
+var christian = Human(name: "Christian", age: 27)
+var lisa = Human(name: "Lisa", age: 27)
+var emanuel = Human(name: "Emanuel", age: 10)
+var gabriella = Human(name: "Gabriella", age: 6)
+var myriam = Human(name: "Myriam", age: 67)
+
+print(christian)
+print(lisa)
+
+if christian == lisa{
+    print("they're the same")
+} else {
+    print("They're not the same")
+
+}
+
+var people:[Human] = [christian,lisa,gabriella,emanuel,myriam]
+var sortedPeople:[Human] = people.sorted()
+print(sortedPeople)
+
+```
+
 
 
 ## Question 2
