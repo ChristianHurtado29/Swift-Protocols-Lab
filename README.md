@@ -90,8 +90,6 @@ print(sortedPeople)
 
 ```
 
-
-
 ## Question 2
 
 a. Create a protocol called `Vehicle` with two requirements:
@@ -107,7 +105,39 @@ and drive() should print "Begin pedaling!". Create an instance of Bike, print it
 then call drive().
 
 </br> </br>
+Answer:
+```
+protocol Vehicle{
+    var numberOfWheels:Int { get }
+    
+    func drive()
+}
 
+struct Car:Vehicle{
+    var numberOfWheels:Int = 4
+    func drive(){
+        print("Vroom vroom!🚗💨")
+    }
+}
+
+var myCar: Car{
+    .init(numberOfWheels: 4)
+}
+print(myCar.numberOfWheels)
+myCar.drive()
+
+struct Bike: Vehicle{
+    var numberOfWheels: Int = 2
+    func drive() {
+        print("Begin Pedaling!! 🚵🏽‍♂️")
+    }
+}
+var myBike: Bike{
+    .init(numberOfWheels: 2)
+}
+print(myBike.numberOfWheels)
+myBike.drive()
+```
 
 ## Question 3
 // Given the below two protocols, create a struct for penguin(a flightless bird) and an eagle.
