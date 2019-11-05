@@ -194,6 +194,26 @@ enum SuperHero: Transformation {
     // write code here.
 }
 
+
+/*
+protocol Transformation {
+    mutating func transform()
+}
+
+enum SuperHero: Transformation, CaseIterable{
+    mutating func transform() {
+        
+    }
+    
+    switch self{
+    case notHulk:
+    case hulk:
+    
+    default:
+    break
+*/
+
+
 // Example Output:
 var bruceBanner = SuperHero.notHulk
 
